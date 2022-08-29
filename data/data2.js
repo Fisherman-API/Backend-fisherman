@@ -65,53 +65,53 @@ const regs = [
   },
   {
     'id': '10',
-    'name': 'Rock Fish',
-    'region': 'Marine zone',
+    'name': 'Pacific Bluefin Tuna',
+    'region': 'Mainly off Coast of California',
     'rules': '5 per day to Sep 5, 4 per day after Sep 6',
     'seasons': 'All Year'
   },
   {
     'id': '11',
-    'name': 'Stripped Bass',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
+    'name': 'Bocaccio',
+    'region': 'most common between Oregon and northern Baja California',
+    'rules': 'Not a limit, preferred not to catch intentionally and release if caught',
     'seasons': 'All Year'
 
   },
   {
     'id': '12',
-    'name': 'Blue Gill',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
-    'seasons': 'All Year'
+    'name': 'Coho Salmon',
+    'region': 'North Pacific coastal streams and rivers',
+    'rules': '2 adult per day, 5 per day, minimum 12in with barbless hooks',
+    'seasons': 'Closed with exceptions'
   },
   {
     'id': '13',
-    'name': 'Cat Fish',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
+    'name': 'North Pacific Swordfish',
+    'region': 'Marine Zone west Coast, tropical/temperate waters',
+    'rules': '2 per day, permit required',
     'seasons': 'All Year'
   },
   {
     'id': '14',
-    'name': 'crappie',
-    'region': 'Columbia zone',
+    'name': 'Pacific Mackerel',
+    'region': 'Western Pacific Coast',
     'rules': 'No Limit, Any Size',
     'seasons': 'All Year'
   },
   {
     'id': '15',
-    'name': 'Sun Fish',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
+    'name': 'Petrale Sole',
+    'region': 'Western Pacific Coast',
+    'rules': 'No Limit, Any Size, cannot clean offshore',
     'seasons': 'All Year'
   },
   {
     'id': '16',
-    'name': 'WallEye',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
-    'seasons': 'All Year'
+    'name': 'Blue Mussel',
+    'region': 'Pacific Coast Line',
+    'rules': '72 per day, Any Size',
+    'seasons': 'Months that end in Y'
   },
   {
     'id': '17',
