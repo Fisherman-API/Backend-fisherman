@@ -1,65 +1,65 @@
 const regs = [
   {
     'id': '1',
-    'name': 'Trout',
-    'region': 'Willamette zone',
-    'rules': 'lake: 5, steams: catch&release',
-    'seasons': 'lake: All Year, steams: May.22-Oct.31'
+    'name': 'Red Fish',
+    'region': 'Atlantic Ocean',
+    'rules': 'catch&release',
+    'seasons': 'All Year'
 
   },
   {
     'id': '2',
-    'name': 'Salmon',
-    'region': 'Willamette zone',
-    'rules': '2 Adult perDay, 20 per Year',
-    'seasons': 'closed for wild salmon'
+    'name': 'Pollock',
+    'region': 'North Pacific Ocean',
+    'rules': '1 Adult perDay, 20 per Year',
+    'seasons': 'All Year'
   },
   {
     'id': '3',
-    'name': 'StealHead',
-    'region': 'Willamette zone',
-    'rules': '3 Adult per day, 20 per Year',
-    'seasons': 'closed for wild StealHead'
+    'name': 'Flounder',
+    'region': 'Northern Cali through tg=he bering Sea',
+    'rules': '1 Adult per day, 20 per Year',
+    'seasons': 'oct-dec'
   },
   {
     'id': '4',
-    'name': 'Sturgeon',
-    'region': 'Willamette zone',
-    'rules': 'catch&release Only, Must be over 54in',
+    'name': 'Atlantic Bigeye Tuna',
+    'region': 'Atlantic, Pacific, Indian Oceans',
+    'rules': 'catch limit may vary',
     'seasons': 'All Year'
   },
   {
     'id': '5',
-    'name': 'Bass',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
+    'name': 'Atlantic BlackTip Shark',
+    'region': 'Gulf of Mexico',
+    'rules': 'shark dealer permit required, limit 4 per year',
     'seasons': 'All Year'
   },
   {
     'id': '6',
-    'name': 'Shad',
-    'region': 'Columbia zone',
-    'rules': 'No Limit, Any Size',
+    'name': 'Atlantic Chub Mackerel',
+    'region': 'Western Atlantic Ocean range',
+    'rules': 'permit required to harvest, Catch&release',
     'seasons': 'All Year'
   },
   {
     'id': '7',
-    'name': 'Smelt',
-    'region': 'Columbia zone',
-    'rules': 'Unlawful to take or attempt to take',
-    'seasons': 'NO LAWFUL SEASONS'
+    'name': 'Atlantic Cod',
+    'region': 'NorthWest Atlantic',
+    'rules': 'Catch&release juveniles, permit required, 2 per day',
+    'seasons': 'All Year'
   },
   {
     'id': '8',
-    'name': 'lingcod',
-    'region': 'Marine zone',
-    'rules': '22in minimum, Bag limit subject to change',
+    'name': 'Atlantic Common Thresher Shark',
+    'region': 'Northwest Atlantic Ocean',
+    'rules': 'Shark dealer permit required, 2 per year',
     'seasons': 'All Year'
   },
   {
     'id': '9',
-    'name': 'Halibut',
-    'region': 'Marine zone',
+    'name': 'Atlantic Halibut',
+    'region': 'Gulf of main',
     'rules': '1 per day',
     'seasons': 'May.1-End of Year'
   },
