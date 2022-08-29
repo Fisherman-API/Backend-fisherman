@@ -2,7 +2,15 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS fish CASCADE; 
+DROP TABLE IF EXISTS fish CASCADE;
+DROP TABLE IF EXISTS profile CASCADE;
+
+CREATE TABLE profile (
+        id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        count VARCHAR NOT NULL,
+        type VARCHAR NOT NULL,
+        location VARCHAR NOT NULL
+);
 
 CREATE TABLE users (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
