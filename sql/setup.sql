@@ -14,6 +14,7 @@ CREATE TABLE profile (
         location VARCHAR NOT NULL
 );
 
+
 CREATE TABLE users (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     username TEXT NOT NULL,
@@ -29,6 +30,8 @@ CREATE TABLE fish (
     length VARCHAR NOT NULL,
     gender VARCHAR NOT NULL
 );
+
+
 
 
 
