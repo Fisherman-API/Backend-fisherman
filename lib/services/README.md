@@ -11,4 +11,3 @@ Some examples of services:
 * Send a text message to someone when a new order is made
 * Upload files to an S3 bucket
 * Fetch info from a web API to fill in data
-* Use the tensorflow toxicity model to reject toxic text
