@@ -15,7 +15,7 @@ const registerAndLogin = async (userProps = {}) => {
   const agent = request.agent(app);
   const user = await UserService.create({ ...mockUser, ...userProps });
   const { email } = user;
-  await agent.post('/api/v1/users/sessions').send({ email, password });
+  await agent.post('/api/v1/users/session').send({ email, password });
   return [agent, user];
 };
 
@@ -34,18 +34,18 @@ describe('user routes', () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
-      user: {
-        id: expect.any(String),
-        email: 'test@example.com',
-        username: 'mock',
-      },
-      message: 'successfully signed in!',
+
+      message: 'Signed in successfully!',
     });
   });
   it('delete users session', async () => {
     const [agent] = await registerAndLogin();
-    const resp = await agent.delete('/api/v1/users/sessions');
-    expect(resp.status).toBe(204);
+    const resp = await agent.delete('/api/v1/users/session');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      
+      message: 'signed out!'
+    });
   });
   
 });

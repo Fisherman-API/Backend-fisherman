@@ -2,6 +2,23 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const app = require('../lib/app');
 const request = require('supertest');
+const UserService = require('../lib/services/UserService');
+
+const mockUser = {
+  username: 'mock',
+  password: '123456',
+  email: 'test@example.com',
+};
+
+const registerAndLogin = async (userProps = {}) => {
+  // const password = userProps.password ?? mockUser.password;
+  const agent = request.agent(app);
+  const user = await agent.post('/api/v1/users').send({ ...mockUser, ...userProps });
+  // const { email } = user;
+  // await agent.post('/api/v1/users').send({ email, password });
+  return [agent, user];
+};
+
 
 describe('user routes', () => {
   beforeEach(() => {
@@ -11,8 +28,9 @@ describe('user routes', () => {
   afterAll(() => {
     pool.end();
   });
-  it(' get location and bycatch data', async () => {
-    const res = await request(app).get('/api/v1/fishes/red-snapper/location');
+  it.only(' get location and bycatch data', async () => {
+    const [agent] = await registerAndLogin();
+    const res = await agent.get('/api/v1/fishes/red-snapper/location');
 
     expect(res.body).toEqual({
       location:
