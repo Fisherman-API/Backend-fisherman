@@ -17,7 +17,7 @@ const regs = [
   {
     'id': '3',
     'name': 'Flounder',
-    'region': 'Northern Cali through tg=he bering Sea',
+    'region': 'Northern Cali through the bering Sea',
     'rules': '1 Adult per day, 20 per Year',
     'seasons': 'oct-dec'
   },
@@ -82,7 +82,7 @@ const regs = [
     'id': '12',
     'name': 'Coho Salmon',
     'region': 'North Pacific coastal streams and rivers',
-    'rules': '2 adult per day, 5 per day, minimum 12in with barbless hooks',
+    'rules': '2 adult per day, 5 juvinile per day, minimum 12in with barbless hooks',
     'seasons': 'Closed with exceptions'
   },
   {
