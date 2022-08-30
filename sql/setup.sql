@@ -94,10 +94,18 @@ Annual catch limits, based on best available science.'),
 Managers divide the catch limit into four area-specific limits. When an area-specific limit is reached, the directed fishery in that area is prohibited and only incidental catches of herring are allowed.
 A limited access permit program limits the number of vessels that can participate in the directed fishery for herring. Vessels that do not qualify for a limited access permit can be issued an open access permit, allowing them to harvest a small amount of herring (6,600 pounds) per day or per trip.
 Limits on the amount of herring a vessel can possess in one day or on one trip, depending on the type of permit.'),
-('', ''),
-('', ''),
-('', ''),
-('', ''),
+('Atlantic Mackerel', 'Mackerel are managed in federal waters. There are no state management measures for mackerel.
+Managed using annual catch limits allocated between the commercial and recreational fisheries.
+Managers monitor commercial catch on a weekly basis and will close the fisheries if the limits are reached before the fishing season is over.'),
+('Atlantic Mahi Mahi', 'Permits are required to sell mahi mahi.
+Minimum size limit for mahi mahi caught off the coasts of Georgia, Florida, and South Carolina to protect smaller fish.'),
+('Atlantic Pollock', 'Permitting requirements for commercial vessels.
+Separate management measures for recreational vessels.
+Time/Area Closures to protect spawning fish and habitat.
+Minimum fish sizes to prevent harvest of juvenile fish.
+Annual catch limits, based on best available science.'),
+('Atlantic Salmon', 'Prohibits possession of wild Atlantic salmon and any directed or incidental Atlantic salmon catch in federal waters.
+All Atlantic salmon caught incidentally in other fisheries must be released in a manner that ensures maximum probability of survival. This protects Atlantic salmon in U.S. marine waters and complements management in state-managed riverine and coastal waters.'),
 ('', ''),
 ('', ''),
 ('', '');
