@@ -12,12 +12,15 @@ const mockUser = {
 const registerAndLogin = async (userProps = {}) => {
   // const password = userProps.password ?? mockUser.password;
   const agent = request.agent(app);
-  const user = await agent
-    .post('/api/v1/users')
-    .send({ ...mockUser, ...userProps });
+  // const user = await agent
+  //   .post('/api/v1/users')
+  //   .send({ ...mockUser, ...userProps });
+  // console.log('User', user.body);
   // const { email } = user;
-  // await agent.post('/api/v1/users').send({ email, password });
-  return [agent, user];
+  await agent
+    .post('/api/v1/users/session')
+    .send({ email: 'admin', password: 'admin' });
+  return [agent];
 };
 
 describe('user routes', () => {
@@ -27,6 +30,35 @@ describe('user routes', () => {
 
   afterAll(() => {
     pool.end();
+  });
+
+  it('#PUT /fishes/:id/ should update an existing fish detail', async () => {
+    const [agent] = await registerAndLogin({
+      email: 'admin',
+    });
+    const resp = await agent.put('/api/v1/fishes/3').send({
+      detail:
+        'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.',
+    });
+    // console.log('response', resp.body);
+    expect(resp.status).toEqual(200);
+    expect(resp.body.detail).toBe(
+      'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.'
+    );
+  });
+
+  it('#POST /fishes/ should create a new fish entry', async () => {
+    const [agent] = await registerAndLogin({ email: 'admin' });
+    const newFish = {
+      name: 'Tilapia',
+      detail: 'This fish is mainly found in the fresh water lake',
+    };
+    const resp = await agent.post('/api/v1/fishes').send(newFish);
+    // expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newFish,
+    });
   });
 
   it('#GET /fishes should return a list of all fishes', async () => {
@@ -40,46 +72,9 @@ describe('user routes', () => {
     });
   });
 
-  it('#GET /fishes/:id/ should return a fish with details', async () => {
-    const response = await request(app).get('/api/v1/fishes/1');
-
-    expect(response.status).toBe(200);
-    expect(response.body).toEqual({
-      id: '1',
-      name: 'Red-Fish',
-      detail: expect.any(String),
-    });
-  });
-
-  it('#PUT /fishes/:id/ should update an existing fish detail', async () => {
-    const [agent] = await registerAndLogin();
-    const resp = await agent.put('/api/v1/fishes/3').send({
-      detail:
-        'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.',
-    });
-    console.log(resp.body);
-    expect(resp.status).toEqual(200);
-    expect(resp.body.detail).toBe(
-      'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.'
-    );
-  });
-
-  it('#POST /fishes/ should create a new fish entry', async () => {
-    const [agent] = await registerAndLogin();
-    const newFish = {
-      name: 'Tilapia',
-      detail: 'This fish is mainly found in the fresh water lake',
-    };
-    const resp = await agent.post('/api/v1/fishes').send(newFish);
-    // expect(resp.status).toBe(200);
-    expect(resp.body).toEqual({
-      id: expect.any(String),
-      ...newFish,
-    });
-  });
-
   it('DELETE /fishes/:id should delete an existing fish', async () => {
-    const [agent] = await registerAndLogin();
+    const [agent] = await registerAndLogin({ email: 'admin' });
+    // console.log('agent', agent);
     const res = await agent.delete('/api/v1/fishes/1');
     expect(res.status).toEqual(200);
     expect(res.body.id).toEqual('1');

@@ -22,6 +22,9 @@ CREATE TABLE users (
     password_hash VARCHAR NOT NULL
 );
 
+INSERT INTO users (username, email, password_hash) VALUES
+('admin', 'admin', '$2b$10$ff/m11WpVlU87bgzRG9pwOkG5LRzhwneD5mYsKoLERctL.oCVa8xy');
+
 
 
 CREATE TABLE fish (
