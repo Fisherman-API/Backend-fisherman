@@ -17,10 +17,17 @@ describe('user routes', () => {
       id: expect.any(String),
 
     });
-      
+
   });
 
-
+  it('/:id should get individual regulation', async () => {
+    const resp = await request(app).get('/api/v1/regulations/1');
+    expect(resp.body).toEqual({
+      id: "1",
+      name: expect.any(String),
+      detail: expect.any(String),
+    });
+  });
 
 
 
