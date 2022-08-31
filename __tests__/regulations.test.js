@@ -62,7 +62,15 @@ describe('user routes', () => {
     expect(updatedResp.body.name).toBe('Snapper');
   });
 
-
+  it('/:id should delete a regulation from fish for DB maintenance', async () => {
+    const [agent] = await registerAndLogin();
+    const deleteReg = await agent.put('/api/v1/regulations/delete/1');
+    expect(deleteReg.body).toEqual({
+      name: 'Red-Fish',
+      id: expect.any(String),
+      detail: 'restricted species'
+    });
+  });
   
     
   afterAll(() => {

@@ -108,7 +108,7 @@ Their snouts are about as long as the rest of their heads.'),
 CREATE TABLE regulations (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR NOT NULL ,
-    detail VARCHAR NOT NULL
+    detail VARCHAR
 );
 
 INSERT INTO regulations (name, detail) VALUES 
