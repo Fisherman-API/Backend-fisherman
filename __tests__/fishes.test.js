@@ -50,6 +50,19 @@ describe('user routes', () => {
       detail: expect.any(String),
     });
   });
+
+  it('#PUT /fishes/:id/ should update an existing fish detail', async () => {
+    const [agent] = await registerAndLogin();
+    const resp = await agent.put('/api/v1/fishes/3').send({
+      detail:
+        'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.',
+    });
+    console.log(resp.body);
+    expect(resp.status).toEqual(200);
+    expect(resp.body.detail).toBe(
+      'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.'
+    );
+  });
 });
 
 //   it.only(' get location and bycatch data', async () => {
