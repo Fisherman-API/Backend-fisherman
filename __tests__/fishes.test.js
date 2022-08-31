@@ -63,6 +63,20 @@ describe('user routes', () => {
       'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.'
     );
   });
+
+  it('#POST /fishes/ should create a new fish entry', async () => {
+    const [agent] = await registerAndLogin();
+    const newFish = {
+      name: 'Tilapia',
+      detail: 'This fish is mainly found in the fresh water lake',
+    };
+    const resp = await agent.post('/api/v1/fishes').send(newFish);
+    // expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newFish,
+    });
+  });
 });
 
 //   it.only(' get location and bycatch data', async () => {
