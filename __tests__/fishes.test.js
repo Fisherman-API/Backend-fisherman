@@ -77,6 +77,13 @@ describe('user routes', () => {
       ...newFish,
     });
   });
+
+  it('DELETE /fishes/:id should delete an existing fish', async () => {
+    const [agent] = await registerAndLogin();
+    const res = await agent.delete('/api/v1/fishes/1');
+    expect(res.status).toEqual(200);
+    expect(res.body.id).toEqual('1');
+  });
 });
 
 //   it.only(' get location and bycatch data', async () => {
