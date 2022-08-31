@@ -29,13 +29,24 @@ describe('user routes', () => {
     pool.end();
   });
 
-  it.only('#GET /fishes should return a list of all fishes', async () => {
+  it('#GET /fishes should return a list of all fishes', async () => {
     const response = await request(app).get('/api/v1/fishes');
 
     expect(response.status).toBe(200);
     expect(response.body[0]).toEqual({
       id: expect.any(String),
       name: expect.any(String),
+      detail: expect.any(String),
+    });
+  });
+
+  it('#GET /fishes/:id/ should return a fish with details', async () => {
+    const response = await request(app).get('/api/v1/fishes/1');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({
+      id: '1',
+      name: 'Red-Fish',
       detail: expect.any(String),
     });
   });
