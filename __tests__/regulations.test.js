@@ -4,7 +4,6 @@ const request = require('supertest');
 const app = require('../lib/app');
 const UserService = require('../lib/services/UserService');
 
-
 const mockUser = {
   username: 'mock',
   password: '123456',
@@ -24,24 +23,18 @@ const registerAndLogin = async (userProps = {}) => {
   return [agent, user];
 };
 
-
-
-
 describe('user routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-    
-  
+
   it('should pull al regs', async () => {
     const resp = await request(app).get('/api/v1/regulations');
     expect(resp.body[0]).toEqual({
       detail: expect.any(String),
       name: expect.any(String),
       id: expect.any(String),
-
     });
-
   });
 
   it('/:id should get individual regulation', async () => {
@@ -57,7 +50,7 @@ describe('user routes', () => {
   it('/:id should update regulations', async () => {
     const [agent] = await registerAndLogin();
     const updatedResp = await agent.put('/api/v1/regulations/1').send(newReg);
-    console.log(updatedResp.body);
+    // console.log(updatedResp.body);
     expect(updatedResp.status).toBe(200);
     expect(updatedResp.body.name).toBe('Snapper');
   });
@@ -68,11 +61,10 @@ describe('user routes', () => {
     expect(deleteReg.body).toEqual({
       name: 'Red-Fish',
       id: expect.any(String),
-      detail: 'restricted species'
+      detail: 'restricted species',
     });
   });
-  
-    
+
   afterAll(() => {
     pool.end();
   });
