@@ -178,22 +178,7 @@ Specific management measures vary year to year depending on current salmon abund
 Commercial fishermen are required to have permits to fish in federal waters and report their catch.
 Recreational fishermen fishing in federal waters for Hawaii bottomfish are required to have permits and record their catch. There are no permit or reporting requirements for recreational fishermen fishing in federal waters for Guam, American Samoa, and Northern Mariana Islands bottomfish, but there are prohibited gear types and harvest techniques. Non-commercial fishing is prohibited within 12 nm of emergent land within the Pacific Remote Islands Marine National Monument.  ');
 
--- ('pollock', 'North Pacific Ocean', '1 Adult per day', 'All Year'),
--- ('Flounder', 'Northern Cali through the bering Sea', '1 Adult per day, 20 per Year', 'oct-dec'),
--- ('Atlantic Bigeye Tuna', 'Atlantic, Pacific, Indian Oceans', 'catch limit may vary', 'All Year'),
--- ('Atlantic BlackTip Shark', 'Gulf of Mexico', 'shark dealer permit required, limit 4 per year', 'All Year');
 
--- CREATE TABLE fish_regulations (
---     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
---     fish_name VARCHAR NOT NULL,
---     regulations_name VARCHAR NOT NULL,
---     name VARCHAR NOT NULL,
---     FOREIGN KEY (fish_name) REFERENCES regulations(name),
---     region VARCHAR NOT NULL,
---     FOREIGN KEY (regulations_name) REFERENCES regulations(name),
---     rules VARCHAR NOT NULL,
---     seasons VARCHAR NOT NULL
--- );
 
 
 
