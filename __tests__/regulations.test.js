@@ -10,8 +10,13 @@ describe('user routes', () => {
     
   
   it('should pull al regs', async () => {
-    const res = await request(app).get('/api/v1/regulations');
-    expect(res.body.length).toEqual(20);
+    const resp = await request(app).get('/regulations');
+    expect(resp.body).toEqual([
+      { id: expect.any(String),
+        name: expect.any(String),
+        detail: expect.any(String),
+      }
+    ]);
       
   });
 
