@@ -3,13 +3,13 @@ const setup = require('../data/setup');
 const app = require('../lib/app');
 const request = require('supertest');
 
-const mockUser = {
-  username: 'mock',
-  password: '123456',
-  email: 'test@example.com',
-};
+// const mockUser = {
+//   username: 'mock',
+//   password: '123456',
+//   email: 'test@example.com',
+// };
 
-const registerAndLogin = async (userProps = {}) => {
+const registerAndLogin = async () => {
   // const password = userProps.password ?? mockUser.password;
   const agent = request.agent(app);
   // const user = await agent
