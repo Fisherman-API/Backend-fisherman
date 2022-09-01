@@ -11,7 +11,7 @@
     <header class="bg-gray-700 text-white p-4">
       <h1 class="text-lg font-semibold">Fish API</h1>
     </header>
-    <main class="p-4 w-1/2 m-auto">
+    <main class="p-4 w-1/2 m-auto main" >
         An App that provides the user with the tools to make the fishing experience better. 
         Manages all aspects of the fishing trip and provides the user with information about the fish species and fishing regulations.:
       <table class="table border-2 mt-4">
@@ -74,10 +74,10 @@
             <td class="table-cell p-3"><pre>/fishes/</pre></td>
             <td class="table-cell p-3 text-center">GET</td>
             <td class="table-cell p-3">
-              Returns the fish and  its regulations
+              Returns the fish and  its regulations. (Protected routes for admin users ONLY)
             </td>
             <td class="table-cell p-3">
-              <a href=" " target="_blank" class="text-blue-700"
+              <a href="http://localhost:7890/api/v1/regulations/fishReg/1 " target="_blank" class="text-blue-700"
                 >Get fish and regulations</a>
             </td>
           </tr>
@@ -107,7 +107,7 @@
             <td class="table-cell p-3"><pre>/regulations/:id</pre></td>
             <td class="table-cell p-3 text-center">GET</td>
             <td class="table-cell p-3">
-              Returns the regulations about the fish matching the id in the parameter
+              Returns the regulations about the fish matching the id in the parameter. (Protected routes for admin users ONLY)
             </td>
             <td class="table-cell p-3">
               <a href="http://localhost:7890/api/v1/regulations/1" target="_blank" class="text-blue-700"
@@ -119,7 +119,7 @@
             <td class="table-cell p-3"><pre>/regulations/:id</pre></td>
             <td class="table-cell p-3 text-center">PUT</td>
             <td class="table-cell p-3">
-              Creates an update for an existing fishes regulation.
+              Creates an update for an existing fishes regulation. (Protected routes for admin users ONLY)
             </td>
             <td class="table-cell p-3">
               <a href="http://localhost:7890/api/v1/regulations/1" target="_blank" class="text-blue-700"
@@ -165,7 +165,7 @@
             <td class="table-cell p-3"><pre>Sean Moriarty</pre></td>
             <td class="table-cell p-3 text-center"></td>
             <td class="table-cell p-3">
-              Returns the detail about the fish matching the id in the parameter
+              Getting tables to join successfully. Regulations and join tables testing. Psudo delete routes. 
             </td>
             <td class="table-cell p-3">
               <a href="https://github.com/spmoriarty" target="_blank" class="text-blue-700"
@@ -177,7 +177,9 @@
             <td class="table-cell p-3"><pre>Daniel Stanford</pre></td>
             <td class="table-cell p-3 text-center"></td>
             <td class="table-cell p-3">
-              Creates an update for an existing fish.
+              Regulations and join tables testing. 
+              Sign in/up routes successfully and seeded data from api into tables. 
+              Cleaned up code throughout app and SQL syntax.
             </td>
             <td class="table-cell p-3">
               <a href="https://github.com/stanfdan000" target="_blank" class="text-blue-700"
