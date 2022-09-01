@@ -14,17 +14,12 @@ CREATE TABLE profile (
         location VARCHAR NOT NULL
 );
 
-
 CREATE TABLE users (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     username TEXT NOT NULL,
     email VARCHAR UNIQUE,
     password_hash VARCHAR NOT NULL
 );
-
-INSERT INTO users (username, email, password_hash) VALUES
-('admin', 'admin', '$2b$10$ff/m11WpVlU87bgzRG9pwOkG5LRzhwneD5mYsKoLERctL.oCVa8xy');
-
 
 
 CREATE TABLE fish (
@@ -33,8 +28,25 @@ CREATE TABLE fish (
     detail TEXT NOT NULL
 );
 
-INSERT INTO fish (name, detail) VALUES 
-('Red-Fish', 'Acadian redfish are orange to flame red, with paler underbellies.
+CREATE TABLE regulations (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR NOT NULL ,
+    detail VARCHAR
+);
+
+CREATE TABLE fish_regulations (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    fish_id BIGINT,
+    regulations_id BIGINT,
+    FOREIGN KEY (fish_id) REFERENCES fish(id),
+    FOREIGN KEY (regulations_id) REFERENCES regulations(id)
+);
+
+
+INSERT INTO users (username, email, password_hash) VALUES
+('admin', 'admin', '$2b$10$ff/m11WpVlU87bgzRG9pwOkG5LRzhwneD5mYsKoLERctL.oCVa8xy');
+
+INSERT INTO fish (name, detail) VALUES ('Red-Fish', 'Acadian redfish are orange to flame red, with paler underbellies.
 They have a flattened body that is longer than it is deep.
 They have large eyes and a large mouth lined with many small teeth.
 They have one continuous dorsal fin that runs from the nape of their neck to their caudal peduncle (where the body meets the tail) and a small tail fin.
@@ -103,19 +115,7 @@ Their snouts are about as long as the rest of their heads.'),
 ('', '');
 
 
-
-
-
-
-
-CREATE TABLE regulations (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name VARCHAR NOT NULL ,
-    detail VARCHAR
-);
-
-INSERT INTO regulations (name, detail) VALUES 
-('Red-Fish', 'Permitting requirements for commercial vessels.
+INSERT INTO regulations (name, detail) VALUES ('Red-Fish', 'Permitting requirements for commercial vessels.
 Separate management measures for recreational vessels.
 Time/Area Closures to protect spawning fish and habitat.
 Minimum fish sizes to prevent harvest of juvenile fish.
@@ -242,9 +242,15 @@ Commercial fishermen are required to have permits to fish in federal waters and 
 Recreational fishermen fishing in federal waters for Hawaii bottomfish are required to have permits and record their catch. There are no permit or reporting requirements for recreational fishermen fishing in federal waters for Guam, American Samoa, and Northern Mariana Islands bottomfish, but there are prohibited gear types and harvest techniques. Non-commercial fishing is prohibited within 12 nm of emergent land within the Pacific Remote Islands Marine National Monument.  ');
 
 
-
-
-
-
-
+INSERT INTO fish_regulations (fish_id, regulations_id) VALUES
+('1','1'),
+('2','2'),
+('3','3'),
+('4','4'),
+('5','5'),
+('6','6'),
+('7','7'),
+('8','8'),
+('9', '9'),
+('10','10');
 

@@ -3,20 +3,9 @@ const setup = require('../data/setup');
 const app = require('../lib/app');
 const request = require('supertest');
 
-// const mockUser = {
-//   username: 'mock',
-//   password: '123456',
-//   email: 'test@example.com',
-// };
 
 const registerAndLogin = async () => {
-  // const password = userProps.password ?? mockUser.password;
   const agent = request.agent(app);
-  // const user = await agent
-  //   .post('/api/v1/users')
-  //   .send({ ...mockUser, ...userProps });
-  // console.log('User', user.body);
-  // const { email } = user;
   await agent
     .post('/api/v1/users/session')
     .send({ email: 'admin', password: 'admin' });
@@ -40,7 +29,6 @@ describe('user routes', () => {
       detail:
         'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.',
     });
-    // console.log('response', resp.body);
     expect(resp.status).toEqual(200);
     expect(resp.body.detail).toBe(
       'Bigeye tuna are dark metallic blue on the back and upper sides and white on the lower sides and belly.'
@@ -54,7 +42,7 @@ describe('user routes', () => {
       detail: 'This fish is mainly found in the fresh water lake',
     };
     const resp = await agent.post('/api/v1/fishes').send(newFish);
-    // expect(resp.status).toBe(200);
+    expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
       ...newFish,
@@ -74,21 +62,14 @@ describe('user routes', () => {
 
   it('DELETE /fishes/:id should delete an existing fish', async () => {
     const [agent] = await registerAndLogin({ email: 'admin' });
-    // console.log('agent', agent);
-    const res = await agent.delete('/api/v1/fishes/1');
-    expect(res.status).toEqual(200);
-    expect(res.body.id).toEqual('1');
+    const deleteFish = await agent.put('/api/v1/fishes/delete/1');
+    expect(deleteFish.status).toEqual(200);
+    expect(deleteFish.body).toEqual({ 
+      name: 'Red-Fish',
+      id: expect.any(String),
+      detail: 'fish is not in database',
+    });
+  
   });
 });
 
-//   it.only(' get location and bycatch data', async () => {
-//     const [agent] = await registerAndLogin();
-//     const res = await agent.get('/api/v1/fishes/red-snapper/location');
-
-//     expect(res.body).toEqual({
-//       location:
-//         '<ul>\n<li>Red snapper are generally found at 30 to 620 feet deep in the Gulf of Mexico and along the eastern coasts of North America, Central America, and northern South America.</li>\n<li>They are rare north of the Carolinas.</li>\n</ul>\n',
-//       bycatch:
-//         'Regulations require modified fishing gear to reduce bycatch. Release techniques improve the chance of survival of unintentionally caught fish.',
-//     });
-//   });
