@@ -2,25 +2,23 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
-const UserService = require('../lib/services/UserService');
 
-const mockUser = {
-  username: 'mock',
-  password: '123456',
-  email: 'test@example.com',
-};
+// const mockUser = {
+//   username: 'mock',
+//   password: '123456',
+//   email: 'test@example.com',
+// };
 
 const newReg = {
   name: 'Snapper',
 };
 
-const registerAndLogin = async (userProps = {}) => {
-  const password = userProps.password ?? mockUser.password;
+const registerAndLogin = async () => {
   const agent = request.agent(app);
-  const user = await UserService.create({ ...mockUser, ...userProps });
-  const { email } = user;
-  await agent.post('/api/v1/users/session').send({ email, password });
-  return [agent, user];
+  await agent
+    .post('/api/v1/users/session')
+    .send({ email: 'admin', password: 'admin' });
+  return [agent];
 };
 
 describe('user routes', () => {
@@ -47,8 +45,8 @@ describe('user routes', () => {
     });
   });
 
-  it('/:id should update regulations', async () => {
-    const [agent] = await registerAndLogin();
+  it('#PUT /:id should update regulations', async () => {
+    const [agent] = await registerAndLogin({ email: 'admin' });
     const updatedResp = await agent.put('/api/v1/regulations/1').send(newReg);
     // console.log(updatedResp.body);
     expect(updatedResp.status).toBe(200);
@@ -56,7 +54,7 @@ describe('user routes', () => {
   });
 
   it('/:id should delete a regulation from fish for DB maintenance', async () => {
-    const [agent] = await registerAndLogin();
+    const [agent] = await registerAndLogin({ email: 'admin' });
     const deleteReg = await agent.put('/api/v1/regulations/delete/1');
     expect(deleteReg.body).toEqual({
       name: 'Red-Fish',
