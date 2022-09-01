@@ -3,11 +3,6 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-// const mockUser = {
-//   username: 'mock',
-//   password: '123456',
-//   email: 'test@example.com',
-// };
 
 const newReg = {
   name: 'Snapper',
@@ -48,7 +43,6 @@ describe('user routes', () => {
   it('#PUT /:id should update regulations', async () => {
     const [agent] = await registerAndLogin({ email: 'admin' });
     const updatedResp = await agent.put('/api/v1/regulations/1').send(newReg);
-    // console.log(updatedResp.body);
     expect(updatedResp.status).toBe(200);
     expect(updatedResp.body.name).toBe('Snapper');
   });

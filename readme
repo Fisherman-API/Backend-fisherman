@@ -1,0 +1,100 @@
+ALL DISCARDED CODE FOR REVIEW
+
+
+// const mockUser = {
+//   username: 'mock',
+//   password: '123456',
+//   email: 'test@example.com',
+// };
+
+const registerAndLogin = async () => {
+  // const password = userProps.password ?? mockUser.password;
+  const agent = request.agent(app);
+  // const user = await agent
+  //   .post('/api/v1/users')
+  //   .send({ ...mockUser, ...userProps });
+  // console.log('User', user.body);
+  // const { email } = user;
+  await agent
+    .post('/api/v1/users/session')
+    .send({ email: 'admin', password: 'admin' });
+  return [agent];
+};
+
+//   it.only(' get location and bycatch data', async () => {
+//     const [agent] = await registerAndLogin();
+//     const res = await agent.get('/api/v1/fishes/red-snapper/location');
+
+//     expect(res.body).toEqual({
+//       location:
+//         '<ul>\n<li>Red snapper are generally found at 30 to 620 feet deep in the Gulf of Mexico and along the eastern coasts of North America, Central America, and northern South America.</li>\n<li>They are rare north of the Carolinas.</li>\n</ul>\n',
+//       bycatch:
+//         'Regulations require modified fishing gear to reduce bycatch. Release techniques improve the chance of survival of unintentionally caught fish.',
+//     });
+//   });
+
+
+
+// .delete('/:id', async (req, res, next) => {
+//   try {
+//     const deleteFish = await Fish.deleteById(req.params.id);
+//     console.log('this is from delete', deleteFish);
+//     res.json(deleteFish);
+//   } catch (e) {
+//     next(e);
+//   }
+// });
+// .get('/:species/location', async (req, res, next) => {
+//   try {
+//     const response = await fetch(
+//       `https://www.fishwatch.gov/api/species/${req.params.species}`
+//     );
+//     const data = await response.json();
+//     const info = {};
+//     info.location = data[0].Location;
+//     info.bycatch = data[0].Bycatch;
+//     // const json = JSON.parse(data);
+//     res.json(info);
+//   } catch (e) {
+//     next(e);
+//   }
+// });
+
+  // static async deleteById(id) {
+    
+  //   const { rows } = await pool.query(
+  //     `DELETE FROM fish 
+  //     WHERE id = $1 RETURNING *`,
+  //     [id]
+  //   );
+  //   return new Fish(rows[0]);
+  // }
+
+
+    // static async delete(id) {
+  //   const deletes = await Regulation.getById(id);
+  //   if (!deletes) return null;
+  //   const { rows } = await pool.query(`
+  //   DELETE detail FROM regulations 
+  //   WHERE id = $1
+  //   RETURNING *`,
+  //   [id]
+  //   );
+  //   return new Regulation(rows[0]);
+  // }
+
+   // static async getRegulationByName(name) {
+  //   const { rows } = await pool.query(
+  //     `SELECT regulations.*,
+  //             COALESCE(
+  //                 json_agg(to_jsonb(fish))
+  //                 FILTER (WHERE fish.name IS NOT NULL), '[]')
+  //                 as fish FROM regulations
+  //                 LEFT JOIN fish ON regulations.name = fish.name
+  //                 GROUP BY regulations.id
+  //                 ;
+  //                 `,
+  //     [name]
+  //   );
+  //   return new Fish(rows[0]);
+  // }
