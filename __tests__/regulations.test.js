@@ -3,11 +3,6 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-// const mockUser = {
-//   username: 'mock',
-//   password: '123456',
-//   email: 'test@example.com',
-// };
 
 const newReg = {
   name: 'Snapper',
@@ -29,7 +24,7 @@ describe('user routes', () => {
   it('should pull all regulation', async () => {
     const resp = await request(app).get('/api/v1/regulations');
     expect(resp.body[0]).toEqual({
-      detail: expect.any(String),
+      details: expect.any(String),
       name: expect.any(String),
       id: expect.any(String),
     });
@@ -41,14 +36,13 @@ describe('user routes', () => {
     expect(resp.body).toEqual({
       id: '1',
       name: expect.any(String),
-      detail: expect.any(String),
+      details: expect.any(String),
     });
   });
 
   it('#PUT /:id should update regulations', async () => {
     const [agent] = await registerAndLogin({ email: 'admin' });
     const updatedResp = await agent.put('/api/v1/regulations/1').send(newReg);
-    // console.log(updatedResp.body);
     expect(updatedResp.status).toBe(200);
     expect(updatedResp.body.name).toBe('Snapper');
   });
@@ -59,9 +53,23 @@ describe('user routes', () => {
     expect(deleteReg.body).toEqual({
       name: 'Red-Fish',
       id: expect.any(String),
-      detail: 'restricted species',
+      details: 'restricted species',
     });
   });
+
+
+  it('/fishReg/:id will get regulation by fish with details', async () => {
+    const [agent] = await registerAndLogin({ email: 'admin' });
+    const res = await agent.get('/api/v1/regulations/fishReg/2');
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      name: expect.any(String),
+      details: expect.any(String),
+      detail: expect.any(String),
+    });
+  });
+
+
 
   afterAll(() => {
     pool.end();

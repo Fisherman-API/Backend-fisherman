@@ -30,11 +30,9 @@ describe('user routes', () => {
 
   it('#POST /user should create and sign in a new user', async () => {
     const res = await request(app).post('/api/v1/users').send(mockUser);
-    // console.log(res.body);
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
-
       message: 'Signed in successfully!',
     });
   });
@@ -43,9 +41,8 @@ describe('user routes', () => {
     const resp = await agent.delete('/api/v1/users/session');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
-      
       message: 'signed out!'
     });
   });
-  
 });
+  
