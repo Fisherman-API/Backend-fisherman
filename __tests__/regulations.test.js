@@ -26,7 +26,7 @@ describe('user routes', () => {
     return setup(pool);
   });
 
-  it('should pull al regs', async () => {
+  it('should pull all regulation', async () => {
     const resp = await request(app).get('/api/v1/regulations');
     expect(resp.body[0]).toEqual({
       detail: expect.any(String),
