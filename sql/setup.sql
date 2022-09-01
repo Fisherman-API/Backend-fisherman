@@ -109,10 +109,7 @@ They are light green, olive, steel blue, black, or brown on top, with a white or
 ('Atlantic Wahoo', 'Atlantic wahoo are steel blue above and pale blue below.
 They are covered with small scales and have a series of 25 to 30 irregular blackish-blue vertical bars on their sides that fade rapidly after death.
 They have large mouths with strong, triangular, compressed, and finely serrated teeth.
-Their snouts are about as long as the rest of their heads.'),
-('', ''),
-('', ''),
-('', '');
+Their snouts are about as long as the rest of their heads.');
 
 
 INSERT INTO regulations (name, details) VALUES ('Red-Fish', 'Permitting requirements for commercial vessels.
