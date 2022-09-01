@@ -569,3 +569,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
+
+
+.github {
+  border: solid lightblue 4px;
+  text-align: center;
+}
+
+.link {
+  border: solid yellow 4px;
+  text
+
+}
