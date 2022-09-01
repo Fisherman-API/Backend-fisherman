@@ -75,11 +75,13 @@ describe('user routes', () => {
   it('DELETE /fishes/:id should delete an existing fish', async () => {
     const [agent] = await registerAndLogin({ email: 'admin' });
     // console.log('agent', agent);
-    const res = await agent.delete('/api/v1/fishes/1');
-    console.log(res.body);
+    const deleteFish = await agent.put('/api/v1/fishes/delete/1');
     //expect(res.status).toEqual(200);
-    console.log(res.body.id);
-    expect(res.body.id).toEqual('1');
+    expect(deleteFish.body).toEqual({ 
+      name: 'Red-Fish',
+      id: expect.any(String),
+      detail: 'fish is not in database',
+    });
   
   });
 });
