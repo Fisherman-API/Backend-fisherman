@@ -31,7 +31,7 @@ CREATE TABLE fish (
 CREATE TABLE regulations (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR NOT NULL ,
-    detail VARCHAR
+    details VARCHAR
 );
 
 CREATE TABLE fish_regulations (
@@ -115,7 +115,7 @@ Their snouts are about as long as the rest of their heads.'),
 ('', '');
 
 
-INSERT INTO regulations (name, detail) VALUES ('Red-Fish', 'Permitting requirements for commercial vessels.
+INSERT INTO regulations (name, details) VALUES ('Red-Fish', 'Permitting requirements for commercial vessels.
 Separate management measures for recreational vessels.
 Time/Area Closures to protect spawning fish and habitat.
 Minimum fish sizes to prevent harvest of juvenile fish.
