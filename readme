@@ -1,4 +1,4 @@
-ALL DISCARDED CODE FOR REVIEW
+// ALL DISCARDED CODE FOR REVIEW
 
 
 // const mockUser = {
@@ -7,19 +7,19 @@ ALL DISCARDED CODE FOR REVIEW
 //   email: 'test@example.com',
 // };
 
-const registerAndLogin = async () => {
-  // const password = userProps.password ?? mockUser.password;
-  const agent = request.agent(app);
-  // const user = await agent
-  //   .post('/api/v1/users')
-  //   .send({ ...mockUser, ...userProps });
-  // console.log('User', user.body);
-  // const { email } = user;
-  await agent
-    .post('/api/v1/users/session')
-    .send({ email: 'admin', password: 'admin' });
-  return [agent];
-};
+// const registerAndLogin = async () => {
+//   const password = userProps.password ?? mockUser.password;
+//   const agent = request.agent(app);
+//   const user = await agent
+//     .post('/api/v1/users')
+//     .send({ ...mockUser, ...userProps });
+//   console.log('User', user.body);
+//   const { email } = user;
+//   await agent
+//     .post('/api/v1/users/session')
+//     .send({ email: 'admin', password: 'admin' });
+//   return [agent];
+// };
 
 //   it.only(' get location and bycatch data', async () => {
 //     const [agent] = await registerAndLogin();
@@ -60,41 +60,41 @@ const registerAndLogin = async () => {
 //   }
 // });
 
-  // static async deleteById(id) {
+//   static async deleteById(id) {
     
-  //   const { rows } = await pool.query(
-  //     `DELETE FROM fish 
-  //     WHERE id = $1 RETURNING *`,
-  //     [id]
-  //   );
-  //   return new Fish(rows[0]);
-  // }
+//     const { rows } = await pool.query(
+//       `DELETE FROM fish 
+//       WHERE id = $1 RETURNING *`,
+//       [id]
+//     );
+//     return new Fish(rows[0]);
+//   }
 
 
-    // static async delete(id) {
-  //   const deletes = await Regulation.getById(id);
-  //   if (!deletes) return null;
-  //   const { rows } = await pool.query(`
-  //   DELETE detail FROM regulations 
-  //   WHERE id = $1
-  //   RETURNING *`,
-  //   [id]
-  //   );
-  //   return new Regulation(rows[0]);
-  // }
+//     static async delete(id) {
+//     const deletes = await Regulation.getById(id);
+//     if (!deletes) return null;
+//     const { rows } = await pool.query(`
+//     DELETE detail FROM regulations 
+//     WHERE id = $1
+//     RETURNING *`,
+//     [id]
+//     );
+//     return new Regulation(rows[0]);
+//   }
 
-   // static async getRegulationByName(name) {
-  //   const { rows } = await pool.query(
-  //     `SELECT regulations.*,
-  //             COALESCE(
-  //                 json_agg(to_jsonb(fish))
-  //                 FILTER (WHERE fish.name IS NOT NULL), '[]')
-  //                 as fish FROM regulations
-  //                 LEFT JOIN fish ON regulations.name = fish.name
-  //                 GROUP BY regulations.id
-  //                 ;
-  //                 `,
-  //     [name]
-  //   );
-  //   return new Fish(rows[0]);
-  // }
+//    static async getRegulationByName(name) {
+//     const { rows } = await pool.query(
+//       `SELECT regulations.*,
+//               COALESCE(
+//                   json_agg(to_jsonb(fish))
+//                   FILTER (WHERE fish.name IS NOT NULL), '[]')
+//                   as fish FROM regulations
+//                   LEFT JOIN fish ON regulations.name = fish.name
+//                   GROUP BY regulations.id
+//                   ;
+//                   `,
+//       [name]
+//     );
+//     return new Fish(rows[0]);
+//   }
