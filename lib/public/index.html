@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>Fish API</title>
+  </head>
+  <body>
+    <header class="bg-gray-700 text-white p-4">
+      <h1 class="text-lg font-semibold">Fish API</h1>
+    </header>
+    <main class="p-4 w-1/2 m-auto">
+        An App that provides the user with the tools to make the fishing experience better. 
+        Manages all aspects of the fishing trip and provides the user with information about the fish species and fishing regulations.:
+      <table class="table border-2 mt-4">
+        <thead class="table-header-group border-2">
+          <tr>
+            <th class="table-cell p-3">Route</th>
+            <th class="table-cell p-3">Method</th>
+            <th class="table-cell p-3 w-40">Description</th>
+            <th class="table-cell p-3">Example</th>
+          </tr>
+        </thead>
+        <tbody class="table-row-group">
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/fishes</pre></td>
+            <td class="table-cell p-3 text-center">GET</td>
+            <td class="table-cell p-3">Gets a list of all fish detail and ids</td>
+            <td class="table-cell p-3">
+              <a href="/api/v1/fishes" target="_blank" class="text-blue-700"
+                >List of fishes</a
+              >
+            </td>
+          </tr>
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/fishes/:id</pre></td>
+            <td class="table-cell p-3 text-center">GET</td>
+            <td class="table-cell p-3">
+              Returns the detail about the fish matching the id in the parameter
+            </td>
+            <td class="table-cell p-3">
+              <a href="/api/v1/fishes/1" target="_blank" class="text-blue-700"
+                >Get Fish 1</a
+              >
+            </td>
+          </tr>
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/fishes/:id</pre></td>
+            <td class="table-cell p-3 text-center">PUT</td>
+            <td class="table-cell p-3">
+              Creates an updates for an existing fish.
+            </td>
+            <td class="table-cell p-3">
+              <a href="/api/v1/fishes/3" target="_blank" class="text-blue-700"
+                >Get Fish 3</a
+              >
+            </td>
+          </tr>
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/fishes/</pre></td>
+            <td class="table-cell p-3 text-center">POST</td>
+            <td class="table-cell p-3">
+              Creates a new fish entry.
+            </td>
+            <td class="table-cell p-3">
+              <a href="/api/v1/fishes" target="_blank" class="text-blue-700"
+                >Post a new Fish</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
