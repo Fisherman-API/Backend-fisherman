@@ -11,9 +11,10 @@
     <header class="bg-gray-700 text-white p-4">
       <h1 class="text-lg font-semibold">Fish API</h1>
     </header>
-    <main class="p-4 w-1/2 m-auto main" >
-        An App that provides the user with the tools to make the fishing experience better. 
-        Manages all aspects of the fishing trip and provides the user with information about the fish species and fishing regulations.:
+    <main class="p-4 w-1/2 m-auto main">
+      An App that provides the user with the tools to make the fishing
+      experience better. Manages all aspects of the fishing trip and provides
+      the user with information about the fish species and fishing regulations.:
       <table class="table border-2 mt-4">
         <thead class="table-header-group border-2">
           <tr>
@@ -27,9 +28,14 @@
           <tr class="border-2">
             <td class="table-cell p-3"><pre>/fishes</pre></td>
             <td class="table-cell p-3 text-center">GET</td>
-            <td class="table-cell p-3">Gets a list of all fish detail and ids</td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/fishes" target="_blank" class="text-blue-700"
+              Gets a list of all fish detail and ids
+            </td>
+            <td class="table-cell p-3">
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/fishes"
+                target="_blank"
+                class="text-blue-700"
                 >List of fishes</a
               >
             </td>
@@ -41,7 +47,10 @@
               Returns the detail about the fish matching the id in the parameter
             </td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/fishes/1" target="_blank" class="text-blue-700"
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/fishes/1"
+                target="_blank"
+                class="text-blue-700"
                 >Get Fish 1 details</a
               >
             </td>
@@ -53,7 +62,10 @@
               Creates an update for an existing fish.
             </td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/fishes/3" target="_blank" class="text-blue-700"
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/fishes/3"
+                target="_blank"
+                class="text-blue-700"
                 >Update Fish 3</a
               >
             </td>
@@ -61,11 +73,12 @@
           <tr class="border-2">
             <td class="table-cell p-3"><pre>/fishes/</pre></td>
             <td class="table-cell p-3 text-center">POST</td>
+            <td class="table-cell p-3">Creates a new fish entry.</td>
             <td class="table-cell p-3">
-              Creates a new fish entry.
-            </td>
-            <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/fishes" target="_blank" class="text-blue-700"
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/fishes"
+                target="_blank"
+                class="text-blue-700"
                 >Post a new Fish</a
               >
             </td>
@@ -74,11 +87,16 @@
             <td class="table-cell p-3"><pre>/fishes/</pre></td>
             <td class="table-cell p-3 text-center">GET</td>
             <td class="table-cell p-3">
-              Returns the fish and  its regulations. (Protected routes for admin users ONLY)
+              Returns the fish and its regulations. (Protected routes for admin
+              users ONLY)
             </td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/regulations/fishReg/1 " target="_blank" class="text-blue-700"
-                >Get fish and regulations</a>
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/regulations/fishReg/1 "
+                target="_blank"
+                class="text-blue-700"
+                >Get fish and regulations</a
+              >
             </td>
           </tr>
         </tbody>
@@ -96,9 +114,14 @@
           <tr class="border-2">
             <td class="table-cell p-3"><pre>/regulations</pre></td>
             <td class="table-cell p-3 text-center">GET</td>
-            <td class="table-cell p-3">Gets a list of all fish regulations and ids</td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/regulations" target="_blank" class="text-blue-700"
+              Gets a list of all fish regulations and ids
+            </td>
+            <td class="table-cell p-3">
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/regulations"
+                target="_blank"
+                class="text-blue-700"
                 >List of regulations</a
               >
             </td>
@@ -107,10 +130,14 @@
             <td class="table-cell p-3"><pre>/regulations/:id</pre></td>
             <td class="table-cell p-3 text-center">GET</td>
             <td class="table-cell p-3">
-              Returns the regulations about the fish matching the id in the parameter. (Protected routes for admin users ONLY)
+              Returns the regulations about the fish matching the id in the
+              parameter. (Protected routes for admin users ONLY)
             </td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/regulations/1" target="_blank" class="text-blue-700"
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/regulations/1"
+                target="_blank"
+                class="text-blue-700"
                 >Get Fish 1 regulations</a
               >
             </td>
@@ -119,10 +146,14 @@
             <td class="table-cell p-3"><pre>/regulations/:id</pre></td>
             <td class="table-cell p-3 text-center">PUT</td>
             <td class="table-cell p-3">
-              Creates an update for an existing fishes regulation. (Protected routes for admin users ONLY)
+              Creates an update for an existing fishes regulation. (Protected
+              routes for admin users ONLY)
             </td>
             <td class="table-cell p-3">
-              <a href="https://fishapiforyou.herokuapp.com/api/v1/regulations/1" target="_blank" class="text-blue-700"
+              <a
+                href="https://fishapiforyou.herokuapp.com/api/v1/regulations/1"
+                target="_blank"
+                class="text-blue-700"
                 >Update Fish 1 regulations</a
               >
             </td>
@@ -142,10 +173,15 @@
           <tr class="border-2">
             <td class="table-cell p-3"><pre>Aaron Enyetu</pre></td>
             <td class="table-cell p-3 text-center"></td>
-            <td class="table-cell p-3">Created test and auth routes for fish. Also created authorization routes. Seeded fish data and setup SQL and UIX contributions.
+            <td class="table-cell p-3">
+              Created test and auth routes for fish. Also created authorization
+              routes. Seeded fish data and setup SQL and UIX contributions.
             </td>
             <td class="table-cell p-3">
-              <a href="https://github.com/aaronEnyetu" target="_blank" class="text-blue-700"
+              <a
+                href="https://github.com/aaronEnyetu"
+                target="_blank"
+                class="text-blue-700"
                 >Github</a
               >
             </td>
@@ -154,10 +190,14 @@
             <td class="table-cell p-3"><pre>Sean Moriarty</pre></td>
             <td class="table-cell p-3 text-center"></td>
             <td class="table-cell p-3">
-              Getting tables to join successfully. Regulations and join tables testing. Psudo delete routes. 
+              Getting tables to join successfully. Regulations and join tables
+              testing. Pseudo delete routes.
             </td>
             <td class="table-cell p-3">
-              <a href="https://github.com/spmoriarty" target="_blank" class="text-blue-700"
+              <a
+                href="https://github.com/spmoriarty"
+                target="_blank"
+                class="text-blue-700"
                 >Github</a
               >
             </td>
@@ -166,12 +206,15 @@
             <td class="table-cell p-3"><pre>Daniel Stanford</pre></td>
             <td class="table-cell p-3 text-center"></td>
             <td class="table-cell p-3">
-              Regulations and join tables testing. 
-              Sign in/up routes successfully and seeded data from api into tables. 
-              Cleaned up code throughout app and SQL syntax.
+              Regulations and join tables testing. Sign in/up routes
+              successfully and seeded data from api into tables. Cleaned up code
+              throughout app and SQL syntax.
             </td>
             <td class="table-cell p-3">
-              <a href="https://github.com/stanfdan000" target="_blank" class="text-blue-700"
+              <a
+                href="https://github.com/stanfdan000"
+                target="_blank"
+                class="text-blue-700"
                 >Github</a
               >
             </td>
@@ -180,10 +223,14 @@
             <td class="table-cell p-3"><pre>Pedro Chavez-Nolasco</pre></td>
             <td class="table-cell p-3 text-center"></td>
             <td class="table-cell p-3">
-              Connected front landing page with database, helped with testing and added some routes.
+              Connected front landing page with database, helped with testing
+              and added some routes.
             </td>
             <td class="table-cell p-3">
-              <a href="https://github.com/pcn23" target="_blank" class="text-blue-700"
+              <a
+                href="https://github.com/pcn23"
+                target="_blank"
+                class="text-blue-700"
                 >Github</a
               >
             </td>
@@ -191,5 +238,5 @@
         </tbody>
       </table>
     </main>
-    </body>
+  </body>
 </html>
